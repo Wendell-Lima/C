@@ -5,7 +5,7 @@
 int main(){
     setlocale(LC_ALL, "Portuguese");
 
-    int n, cont=1, divisor=0;z
+    int n, cont=1, divisor=0;
 
     printf("Digite um numero natural: ");
     scanf("%i",&n);

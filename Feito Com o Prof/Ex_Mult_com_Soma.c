@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 /*Calcule o produto de 2 inteiros apenas usando a soma*/
 
 /*
@@ -22,6 +23,7 @@ int main(){
         menor = n2;
         maior = n1;
     }
+    
     
     if(n1!=0 && n2!=0){
         for(int i=0;i<abs(menor);i++){
