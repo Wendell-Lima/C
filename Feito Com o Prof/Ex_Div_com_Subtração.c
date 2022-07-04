@@ -3,12 +3,12 @@
 /*
 
  	125/25 = 125 - 25 = 100, 100 - 25 = 75, 75 - 25 = 50, 50 - 25 = 25, 25 - 25 = 0 
-	Foram feitas 5 subtrações para se chegar a 0.
+	Foram feitas 5 subtraï¿½ï¿½es para se chegar a 0.
 */
 int main(){
 	int X,Y,D=0;
 	
-	printf("Digite dois números inteiros para serem divididos: "); //primeiro dividendo depois divisor.
+	printf("Digite dois nï¿½meros inteiros para serem divididos: "); //primeiro dividendo depois divisor.
 	scanf("%d %d",&X,&Y);
 	
 	
@@ -22,17 +22,17 @@ int main(){
 		}
 	}
 	else{
-		printf("Não pode ser dividido por 0.");
+		printf("Nï¿½o pode ser dividido por 0.");
 	}
 	
 	if(X<0 && Y>0){
-        printf("Divisão: %d",D*-1);
+        printf("Divisï¿½o: %d",D*-1);
     }
     else if(X>0 && Y<0){
-        printf("Divisão: %d",D*-1);
+        printf("Divisï¿½o: %d",D*-1);
     }
     else{
-    	printf("Divisão: %d",D);
+    	printf("Divisï¿½o: %d",D);
     }
     
     return 0;
