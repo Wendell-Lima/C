@@ -4,11 +4,12 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 int main(){
     char palavra[40],letra[1],aux[40];
-    int tamanho_palavra, tamanho_letra,i,chances=6,acertos=0,acerto=0;
+    int tamanho_palavra, tamanho_letra,i,chances=6,acertos=0,acerto=1;
     do{
         printf("Digite uma palavra: ");
         scanf("%s",&palavra);
@@ -20,44 +21,59 @@ int main(){
         aux[i] = '*';
     }
 
-    while((chances>0) && (acertos<tamanho_palavra)){ /* a pessoa terá 6 tentativas para adivinhar*/
+    while(chances>0 && acertos<tamanho_palavra){ /* a pessoa terá 6 tentativas para adivinhar*/
+            fflush(stdin);
             printf("Chances = %d\n",chances);
             printf("%i Letras\n",tamanho_palavra);
             printf("Palavra = ");
-
             for(i=0;i<tamanho_palavra;i++){
                 printf("%c",aux[i]);
+            }
+            printf("\nUltima letra escolhida: ");
+            for(i=0;i<1;i++){
+                printf("%c",letra[0]);
             }
 
             do{
                 printf("\nDigite uma letra: ");
                 scanf("%s",&letra[0]);
-                tamanho_letra = strlen(letra);
+                tamanho_letra = 1;
                 if(tamanho_letra>1){
                     printf("\nApenas uma LETRA!\n\n");
                 }
             }while(tamanho_letra>1);
 
             for(i=0;i<tamanho_palavra;i++){
-                if(palavra[i]==letra[0]){
-                    acerto = 1; 
-                    aux[i]=palavra[i];
+                if(letra[0]==palavra[i]){
+                    acerto = 2; 
+                    aux[i]=letra[0];
                     acertos++;               
                 }
+                
             }
 
-            if(acerto == 0){
+            if(acerto == 1){
                 chances--;
             }
-            acerto=0;
+            
+            acerto=1;
             system("cls");
     }
     
+
     if(acertos==tamanho_palavra){
-        printf("Parabéns você ganhou!");
+        printf("Parabens voce ganhou!");
+        printf("Palavra = ");
+        for(i=0;i<tamanho_palavra;i++){
+            printf("%c",aux[i]);
+        }
     }
     else{
-        printf("ih bobão, perdeu!");
+        printf("ih bobao, perdeu!");
+        printf("\nPalavra = ");
+        for(i=-1;i<tamanho_palavra;i++){
+            printf("%c",palavra[i]);
+        }
     }
     return 0;
 }
