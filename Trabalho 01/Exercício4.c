@@ -23,7 +23,11 @@ int main(){
 
     while(chances>0 && acertos<tamanho_palavra){ /* a pessoa terá 6 tentativas para adivinhar*/
             fflush(stdin);
-            printf("Chances = %d\n",chances);
+            printf("Palavra = ");
+            for(i=-1;i<tamanho_palavra;i++){
+                printf("%c",palavra[i]);
+            }
+            printf("\nChances = %d\n",chances);
             printf("%i Letras\n",tamanho_palavra);
             printf("Palavra = ");
             for(i=0;i<tamanho_palavra;i++){
@@ -46,7 +50,7 @@ int main(){
             for(i=0;i<tamanho_palavra;i++){
                 if(letra[0]==palavra[i]){
                     acerto = 2; 
-                    aux[i]=letra[0];
+                    aux[i]=palavra[i];
                     acertos++;               
                 }
                 
