@@ -2,12 +2,12 @@
 #include <stdlib.h>
 
 float *criaVet(int);
-// Função cria vetor de float neste exemplo
+// Funï¿½ï¿½o cria vetor de float neste exemplo
 
 float *criaVet(int N){
 	float *v;
 	v = (float *) malloc(N*sizeof(float)); //malloc = memory allocation, recebe a quantidade de bytes que quero alocar
-	// (float *) é o cast, pois malloc retorna void.
+	// (float *) Ã© o cast, pois malloc retorna void.
 	return v;
 }
 

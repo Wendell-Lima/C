@@ -8,7 +8,7 @@ typedef struct{
      int cod;
 	 char nome[50];
      float nota;
-	 char sit; // p: presente, e: excluído 
+	 char sit; // p: presente, e: excluï¿½do 
 } taluno; //taluno --> nome do tipo
 
 
@@ -78,7 +78,7 @@ int leitura_arquivo(char filename[]){
 	int nb, qtde_registros, ind, i;
 	
 	// Abre o arquivo para leitura
-	fp = fopen(filename,"r"/*r = read*/); // Abrir um arquivo em C, eu uso a função fopen(nome_do_arquivo,leitura/gravação/leitura e gravação)
+	fp = fopen(filename,"r"/*r = read*/); // Abrir um arquivo em C, eu uso a funï¿½ï¿½o fopen(nome_do_arquivo,leitura/gravaï¿½ï¿½o/leitura e gravaï¿½ï¿½o)
 	if(fp == NULL){
 		printf("Erro ao abrir arquivo!\n");
 		cadalu = (taluno *) malloc(1000 * sizeof(taluno));
@@ -88,12 +88,12 @@ int leitura_arquivo(char filename[]){
 	// Posiciona no final do arquivo
 	fseek(fp,0,SEEK_END); // Pule 0 bits a partir do fim do arquivo = se posicione no fim do arquivo.
 	
-	// Conta bytes do inicio até a posição corrente
-	nb = ftell(fp); // ftell nos conta quantos bytes possui o arquivo desde o inicio até onde estou
+	// Conta bytes do inicio atï¿½ a posiï¿½ï¿½o corrente
+	nb = ftell(fp); // ftell nos conta quantos bytes possui o arquivo desde o inicio atï¿½ onde estou
 	
 	ind = nb / sizeof(taluno);
 	
-	// Reserva de espaço criando vetor dinamicamente
+	// Reserva de espaï¿½o criando vetor dinamicamente
 	qtde_registros = ind + 1000;
 	
 	cadalu = (taluno *) malloc(qtde_registros * sizeof(taluno));
@@ -102,7 +102,7 @@ int leitura_arquivo(char filename[]){
 		exit(0);
 	}
 	
-	// Posiciona no começo do arquivo
+	// Posiciona no comeï¿½o do arquivo
 	fseek(fp, 0, SEEK_SET);
 	for(i=0; i<ind; i++)
         fread(&cadalu[i], sizeof(taluno), 1, fp);
@@ -148,7 +148,7 @@ int main(){
 			case 3: ordena (cadalu, ind); break;
 			//case 4: 
 			case 5: exit(0); break;
-			default: printf("Escolha Inválida\n");
+			default: printf("Escolha Invalida\n");
 		}
 		
 	} while(op != 4);
